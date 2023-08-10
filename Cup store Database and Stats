@@ -1,0 +1,19 @@
+--Create Cup Store Database
+
+CREATE TABLE cupstore (id INTEGER PRIMARY KEY, name TEXT, quantity INTEGER, sold INTEGER, price INTEGER);
+
+
+INSERT INTO cupstore VALUES (1, "tall pink tumbler", 7, 3, 16.99);
+INSERT INTO cupstore VALUES (2, "tall black tumbler", 5, 1, 16.99);
+INSERT INTO cupstore VALUES (3, "green coffee mug", 3, 3, 5.99); 
+INSERT INTO cupstore VALUES (4, "blue coffee mug",4, 2 , 5.99);
+INSERT INTO cupstore VALUES (5, "orange hydro flask", 2, 2, 28.99); 
+INSERT INTO cupstore VALUES (6, "lavender hydro flask",9, 4, 28.99);
+
+--display order by cups higher than 5.99
+SELECT * FROM cupstore ;
+SELECT * FROM cupstore WHERE price >5.99 ORDER BY sold;
+
+- how many prices are sold for how much?
+
+SELECT sold, SUM (price) FROM cupstore GROUP BY quantity; 
